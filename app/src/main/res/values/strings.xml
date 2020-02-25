@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="maps_button">Maps Button</string>
+    <string name="quest_button">Quest Button</string>
+    <string name="bands_button">Bands Button</string>
+    <string name="battle_generator_button">Battle Generator Button</string>
+    <string name="deployment_button">Deployment Button</string>
+    <string name="events_button">Events Button</string>
+    <string name="todo">TODO</string>
+    <string name="titulo" />
+    <string name="descripcion" />
+</resources>
