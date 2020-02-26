@@ -57,7 +57,7 @@ public class mainActivity extends AppCompatActivity {
         });
     }
 
-    public void toView(Class<?> classTarget) {
+    private void toView(Class<?> classTarget) {
         startActivity(new Intent(this, classTarget));
     }
 }

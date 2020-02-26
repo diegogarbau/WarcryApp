@@ -15,6 +15,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            def map_file_path = MAP_FILE_PATH
+            def deployment_file_path = MAP_FILE_PATH
+            def quest_file_path = MAP_FILE_PATH
+            def twist_file_path = MAP_FILE_PATH
+
         }
     }
     compileOptions {

@@ -7,13 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.entities.Card;
 import com.example.myapplication.services.QuestService;
-import com.example.myapplication.services.WarcryService;
+import com.example.myapplication.services.WarcryParserService;
 
 import java.util.List;
 
 
 public class questsActivity extends AppCompatActivity {
-    private final String inputpath = "/questFile.csv";
+    private final String inputpath = "";
 
 
     @Override
@@ -21,7 +21,12 @@ public class questsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quests);
 
-        WarcryService questService = new QuestService();
+        WarcryParserService questService = new QuestService();
         List<Card> questDeck = questService.getData(inputpath);
+
+/*        questDeck.stream()
+                .forEach(
+                        card-> R.drawable.quest.
+                );*/
     }
 }

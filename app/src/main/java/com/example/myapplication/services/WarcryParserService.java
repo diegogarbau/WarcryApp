@@ -13,22 +13,25 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public abstract class TextFileReaderService implements WarcryService {
+public interface WarcryParserService  {
+    String COMMA_DELIMITER = ",";
 
 
-    @Override
-    public List<Card> getData(String inputPath) {
+    default List<Card> getData(String inputPath) {
         List<Card> inputList = new ArrayList<>();
         try {
             File inputF = new File(inputPath);
             InputStream inputFS = new FileInputStream(inputF);
             BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
-            inputList = br.lines().skip(1).map(this::mapToItem).collect(Collectors.toList());
+            inputList = br.lines()
+                    .skip(1)
+                    .map((String line) -> mapToItem(line,COMMA_DELIMITER))
+                    .collect(Collectors.toList());
             br.close();
         } catch (IOException e) {
         }
         return inputList;
     }
 
-    public abstract Card mapToItem(String line);
+    Card mapToItem(String line, String delimiter);
 }

@@ -1,17 +1,16 @@
 package com.example.myapplication.entities;
 
-public class Quest extends TextCard {
-
+public class Deployment extends ImgCard {
     private final Boolean multiplayer = Boolean.FALSE;
 
     @Override
-    public String getDescription() {
-        return description;
+    public String getImg() {
+        return img;
     }
 
     @Override
-    void setDescription(String description) {
-        this.description = description;
+    void setImg(String img) {
+        this.img = img;
     }
 
     @Override
@@ -26,12 +25,11 @@ public class Quest extends TextCard {
 
     @Override
     public String getTitle() {
-        return title;
+        return null;
     }
 
     @Override
     protected void setTitle(String title) {
-        this.title = title;
     }
 
     @Override
@@ -40,21 +38,20 @@ public class Quest extends TextCard {
     }
 
     @Override
-    protected void setEquilibrated(Boolean equilibrated) {
-        this.equilibrated = equilibrated;
-    }
-
-    @Override
     public Boolean isMultiplayer() {
         return multiplayer;
     }
 
+    @Override
+    protected void setEquilibrated(Boolean equilibrated) {
+        this.equilibrated = equilibrated;
+    }
 
     public static class Builder {
-        int id;
-        String title;
-        String description;
-        Boolean equilibrated;
+        private int id;
+        private String title;
+        private String img;
+        private Boolean equilibrated;
 
 
         public Builder setId(int id) {
@@ -67,8 +64,8 @@ public class Quest extends TextCard {
             return this;
         }
 
-        public Builder setDescription(String description) {
-            this.description = description;
+        public Builder setImg(String img) {
+            this.img = img;
             return this;
         }
 
@@ -77,14 +74,13 @@ public class Quest extends TextCard {
             return this;
         }
 
-
-        public Quest build() {
-            Quest quest = new Quest();
-            quest.setId(id);
-            quest.setTitle(title);
-            quest.setDescription(description);
-            quest.setEquilibrated(equilibrated);
-            return quest;
+        public Deployment build() {
+            Deployment deployment = new Deployment();
+            deployment.setId(id);
+            deployment.setTitle(title);
+            deployment.setImg(img);
+            deployment.setEquilibrated(equilibrated);
+            return deployment;
         }
     }
 }

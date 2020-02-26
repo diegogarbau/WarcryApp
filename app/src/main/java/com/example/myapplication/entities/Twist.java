@@ -1,18 +1,8 @@
 package com.example.myapplication.entities;
 
-public class Quest extends TextCard {
-
-    private final Boolean multiplayer = Boolean.FALSE;
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    @Override
-    void setDescription(String description) {
-        this.description = description;
-    }
+public class Twist extends TextCard {
+    private final Boolean equilibrated = Boolean.TRUE;
+    private final Boolean multiplayer = Boolean.TRUE;
 
     @Override
     public int getId() {
@@ -35,13 +25,18 @@ public class Quest extends TextCard {
     }
 
     @Override
-    public Boolean isEquilibrated() {
-        return equilibrated;
+    public String getDescription() {
+        return description;
     }
 
     @Override
-    protected void setEquilibrated(Boolean equilibrated) {
-        this.equilibrated = equilibrated;
+    void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public Boolean isEquilibrated() {
+        return equilibrated;
     }
 
     @Override
@@ -49,13 +44,14 @@ public class Quest extends TextCard {
         return multiplayer;
     }
 
+    @Override
+    protected void setEquilibrated(Boolean equilibrated) {
+    }
 
     public static class Builder {
         int id;
         String title;
         String description;
-        Boolean equilibrated;
-
 
         public Builder setId(int id) {
             this.id = id;
@@ -72,19 +68,12 @@ public class Quest extends TextCard {
             return this;
         }
 
-        public Builder setEquilibrated(Boolean equilibrated) {
-            this.equilibrated = equilibrated;
-            return this;
-        }
-
-
-        public Quest build() {
-            Quest quest = new Quest();
-            quest.setId(id);
-            quest.setTitle(title);
-            quest.setDescription(description);
-            quest.setEquilibrated(equilibrated);
-            return quest;
+        public Twist build() {
+            Twist twist = new Twist();
+            twist.setId(id);
+            twist.setTitle(title);
+            twist.setDescription(description);
+            return twist;
         }
     }
 }
