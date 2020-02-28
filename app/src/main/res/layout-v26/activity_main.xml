@@ -21,7 +21,7 @@
             android:layout_height="175dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
+            android:layout_margin="20dp"
             android:contentDescription="@string/maps_button"
             android:scaleType="centerCrop"
             android:src="@drawable/maps"
@@ -45,9 +45,8 @@
         android:id="@+id/linearLayoutMID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayoutTOP"
         android:orientation="horizontal"
-        android:layout_margin="10dp"
+        android:layout_below="@id/linearLayoutTOP"
         tools:visibility="visible">
 
         <ImageButton
@@ -56,7 +55,7 @@
             android:layout_height="175dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
+            android:layout_margin="20dp"
             android:contentDescription="@string/events_button"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/events" />
@@ -67,8 +66,7 @@
             android:layout_height="175dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_margin="20dp"
             android:contentDescription="@string/quest_button"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/quest" />
@@ -78,36 +76,32 @@
         android:id="@+id/linearLayoutBOT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayoutMID"
         android:orientation="vertical"
+        android:layout_below="@id/linearLayoutMID"
         tools:visibility="visible">
 
         <RelativeLayout
             android:id="@+id/linearLayoutInnerBOT1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:orientation="horizontal"
             tools:visibility="visible">
 
             <Spinner
                 android:id="@+id/Band_Selector"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/colorPrimary"
-                android:layout_alignParentStart="true"
-                android:layout_alignStart="@id/band_select_button"
-
-                android:entries="Choose a Band"
-                tools:visibility="visible" />
+                android:alpha="0.5"
+                android:tooltipText="Escoge la Banda"
+                android:entries="Choose a Band"    
+                tools:visibility="visible">
 
 
             <Button
-                android:id="@+id/band_select_button"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-
+                android:id="@+id/button"
+                android:layout_width="150dp"
                 android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Show Band" />
         </RelativeLayout>
@@ -147,7 +141,6 @@
                     android:drawingCacheQuality="auto"
                     android:orientation="horizontal"
                     tools:visibility="invisible">
-
                     <RadioButton
                         android:id="@+id/radioButton"
                         android:layout_width="wrap_content"
@@ -159,7 +152,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+2 Jugadores" />
-
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:layout_width="175dp"

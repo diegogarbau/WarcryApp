@@ -1,6 +1,7 @@
 package com.example.myapplication.entities;
 
 public class Deployment extends ImgCard {
+
     private final Boolean multiplayer = Boolean.FALSE;
 
     @Override
