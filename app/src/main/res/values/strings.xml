@@ -9,4 +9,59 @@
     <string name="todo">TODO</string>
     <string name="titulo" />
     <string name="descripcion" />
+    <string name="_2_jugadores">+2 Jugadores</string>
+    <string name="_2jugadores"> 2 Jugadores</string>
+    <string name="battleplan_gen">generate a battleplan</string>
+    <string name="show_band">Show Band</string>
+    <string name="battleplan_generator">Battleplan Generator</string>
+    <string name="first" />
+    <string name="last" />
+    <string name="hello_world" />
+    <string-array name="bands">
+        <item>Escoge una banda</item>
+        <item>Stormcast Sacrosant</item>
+        <item>Stormcast Warrior</item>
+        <item>Stormcast Vanguard</item>
+        <item>Nighthaunt</item>
+        <item>Seraphon</item>
+        <item>Skaven</item>
+        <item>Sylvaneth</item>
+        <item>Fireslayers</item>
+        <item>Stormcast</item>
+        <item>Blades of Khorne: Bloodbound</item>
+        <item>Blades of Khorne: Daemons</item>
+        <item>Bonesplitterz</item>
+        <item>Corvus Cabal</item>
+        <item>Cypher Lords</item>
+        <item>Daughters of Khaine</item>
+        <item>Disciples of Tzeenthc: Arcanites</item>
+        <item>Disciples of Tzeenthc: Daemons</item>
+        <item>Flesh-eaters Courts</item>
+        <item>Gloomspite Gitz</item>
+        <item>Hedonist of Slaanesh</item>
+        <item>Idoneth Deepkin</item>
+        <item>Iron Golems</item>
+        <item>Ironjawz</item>
+        <item>Kharadron Overlords</item>
+        <item>Legions of Nagash</item>
+        <item>Maggotkin of Nurgle:Daemons</item>
+        <item>Maggotkin of Nurgle:Rotbringers</item>
+        <item>Ogor Mawtribes</item>
+        <item>Ossiarch Bonereapers</item>
+        <item>Slaves to Darkness</item>
+        <item>Spire Tyrants</item>
+        <item>Splintered Fang</item>
+        <item>The unmade</item>
+        <item>Untamed Beast</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="questViewDescription">Lorem ipsum dolor sit amet, ut noluisse euripidis constituto duo, vitae meliore vivendum ei has, soluta graecis fastidii ius ne. Ex quod mandamus dissentias quo, eu quot errem hendrerit vix. Malorum intellegat sea in, an per utamur virtute legendos. Hinc case ludus qui ad. Qui rebum saepe ut, tale deleniti eum cu, at nam alterum nominavi consectetuer.</string>
+    <string name="toastRight" />
+    <string name="toastLeft" />
+    <string name="cardType">VICTORY</string>
+    <string name="quest_description" />
+    <string name="card_tittle">TITULO HARDCODEADO</string>
+    <string name="equilibrated">Describe if the Quest is equilibrated or not</string>
 </resources>

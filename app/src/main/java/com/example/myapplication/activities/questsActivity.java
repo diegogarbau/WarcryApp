@@ -1,43 +1,39 @@
 package com.example.myapplication.activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.entities.Card;
-import com.example.myapplication.services.QuestService;
-import com.example.myapplication.services.WarcryParserService;
 
-import java.util.List;
+public class questsActivity extends AppCompatActivity {
+    TextView questViewDescription;
 
-public class questsActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
-
-    MyRecyclerViewAdapter adapter;
-    private final String inputPath = System.getenv("quest_file_path");
-
+    @SuppressLint("ClickableViewAccessibility")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        WarcryParserService questService = new QuestService();
-        List<Card> questDeck = questService.getData(inputPath);
-
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quests);
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.rvQuests);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        initializeView();
+        questViewDescription.setOnTouchListener(new OnSwipeTouchListener(questsActivity.this) {
+            public void onSwipeRight() {
+                
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toastRight), Toast.LENGTH_SHORT).show();
+            }
 
-        adapter = new MyRecyclerViewAdapter(this, questDeck);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
+            public void onSwipeLeft() {
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toastLeft), Toast.LENGTH_SHORT).show();
+            }
+
+        });
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-//        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
-
+    private void initializeView() {
+        questViewDescription = (TextView) findViewById(R.id.CardViewDescription);
     }
 }
+
+

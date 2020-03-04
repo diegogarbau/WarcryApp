@@ -19,11 +19,11 @@ public class mainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageButton maps = this.findViewById(R.id.maps_button);
-        ImageButton bands = this.findViewById(R.id.bands_button);
+        ImageButton bands = this.findViewById(R.id.band_select_button);
         ImageButton quest = this.findViewById(R.id.quest_button);
         ImageButton deployment = this.findViewById(R.id.deployment_button);
         ImageButton event = this.findViewById(R.id.events_button);
-        ImageButton battleGenerator = this.findViewById(R.id.battleplanGenerator_button);
+        ImageButton battleGenerator = this.findViewById(R.id.battleplan_generator_button);
 
         maps.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
