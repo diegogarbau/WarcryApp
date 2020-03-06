@@ -3,7 +3,7 @@ package com.example.myapplication.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,43 +18,27 @@ public class mainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton maps = this.findViewById(R.id.maps_button);
-        ImageButton bands = this.findViewById(R.id.band_select_button);
-        ImageButton quest = this.findViewById(R.id.quest_button);
-        ImageButton deployment = this.findViewById(R.id.deployment_button);
-        ImageButton event = this.findViewById(R.id.events_button);
-        ImageButton battleGenerator = this.findViewById(R.id.battleplan_generator_button);
+        ImageView maps = this.findViewById(R.id.maps_button);
+//        ImageView bands = this.findViewById(R.id.band_select_button);
+        ImageView quest = this.findViewById(R.id.quest_button);
+        ImageView deployment = this.findViewById(R.id.deployment_button);
+        ImageView event = this.findViewById(R.id.events_button);
+        ImageView battleGenerator = this.findViewById(R.id.battleplan_generator_button);
 
         maps.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                toView(mapsActivity.class);
+                toView(MapsActivity.class);
             }
         });
-        bands.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toView(bandsActivity.class);
-            }
-        });
-        quest.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toView(questsActivity.class);
-            }
-        });
-        deployment.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toView(deploymentActivity.class);
-            }
-        });
-        event.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toView(eventsActivity.class);
-            }
-        });
-        battleGenerator.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toView(battleGeneratorActivity.class);
-            }
-        });
+//        bands.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                toView(bandsActivity.class);
+//            }
+//        });
+        quest.setOnClickListener(v -> toView(questsActivity.class));
+        deployment.setOnClickListener(v -> toView(deploymentActivity.class));
+        event.setOnClickListener(v -> toView(eventsActivity.class));
+        battleGenerator.setOnClickListener(v -> toView(battleGeneratorActivity.class));
     }
 
     private void toView(Class<?> classTarget) {

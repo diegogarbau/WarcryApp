@@ -5,7 +5,7 @@ abstract class TextCard extends Card {
     String description;
 
     abstract String getDescription();
-    abstract void setDescription(String description);
+    abstract TextCard setDescription(String description);
 
 
 }

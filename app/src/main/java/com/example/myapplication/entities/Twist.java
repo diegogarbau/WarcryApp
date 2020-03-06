@@ -10,8 +10,9 @@ public class Twist extends TextCard {
     }
 
     @Override
-    protected void setId(int id) {
+    public Twist setId(int id) {
         this.id = id;
+        return this;
     }
 
     @Override
@@ -20,8 +21,9 @@ public class Twist extends TextCard {
     }
 
     @Override
-    protected void setTitle(String title) {
+    public Twist setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     @Override
@@ -30,8 +32,9 @@ public class Twist extends TextCard {
     }
 
     @Override
-    void setDescription(String description) {
+    public Twist setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     @Override
@@ -45,35 +48,8 @@ public class Twist extends TextCard {
     }
 
     @Override
-    protected void setEquilibrated(Boolean equilibrated) {
+    protected Twist setEquilibrated(Boolean equilibrated) {
+        return null;
     }
 
-    public static class Builder {
-        int id;
-        String title;
-        String description;
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public Builder setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-
-        public Twist build() {
-            Twist twist = new Twist();
-            twist.setId(id);
-            twist.setTitle(title);
-            twist.setDescription(description);
-            return twist;
-        }
-    }
 }

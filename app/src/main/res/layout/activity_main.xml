@@ -16,33 +16,39 @@
         android:orientation="horizontal"
         tools:visibility="visible">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/maps_button"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
+            android:clickable="true"
             android:contentDescription="@string/maps_button"
+            android:focusable="true"
+            android:foreground="@drawable/rounded_fg"
             android:scaleType="centerCrop"
             android:src="@drawable/maps"
             tools:visibility="visible" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/deployment_button"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="10dp"
+            android:clickable="true"
             android:contentDescription="@string/deployment_button"
+            android:focusable="true"
+            android:foreground="@drawable/rounded_fg"
             android:scaleType="centerCrop"
             android:src="@drawable/deployments"
             tools:visibility="visible" />
@@ -58,25 +64,31 @@
         android:orientation="horizontal"
         tools:visibility="visible">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/events_button"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
+            android:clickable="true"
             android:contentDescription="@string/events_button"
+            android:focusable="true"
+            android:foreground="@drawable/rounded_fg"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/events" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/quest_button"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="30dp"
+            android:clickable="true"
             android:contentDescription="@string/quest_button"
+            android:focusable="true"
+            android:foreground="@drawable/rounded_fg"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/quest" />
     </RelativeLayout>
@@ -105,21 +117,23 @@
             <Spinner
                 android:id="@+id/Band_Selector"
                 android:layout_width="250dp"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_alignStart="@id/band_select_button"
                 android:layout_alignParentStart="true"
-                android:entries="@array/bands"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:textColor="@android:color/white"
                 android:background="@android:color/background_light"
+                android:entries="@array/bands"
+                android:textColor="@android:color/white"
                 tools:visibility="visible" />
 
             <Button
                 android:id="@+id/band_select_button"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="10dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
                 android:text="@string/show_band" />
         </RelativeLayout>
 
@@ -141,92 +155,87 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="@string/battleplan_generator"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
-                android:textSize="36sp" />
+                android:textSize="32sp" />
 
-            <ToggleButton
-                android:id="@+id/toggleButton"
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView"
                 android:layout_centerHorizontal="true"
-                android:paddingHorizontal="50dp"
-                android:text="ToggleButton"
-                android:textOff="NO EQUILIBRADO"
-                android:textColorLink="@color/colorAccent"
-                android:textOn="EQUILIBRADO"
-                android:textSize="30sp" />
+                android:baselineAligned="true"
+                android:drawingCacheQuality="auto"
+                android:orientation="horizontal"
+                tools:visibility="visible">
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/toggleButton"
-                android:layout_centerHorizontal="true"
-                android:textAlignment="center">
-
-                <RelativeLayout
+                <ToggleButton
+                    android:id="@+id/toggleButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/EqulibratedButton"
+                    android:textColorLink="@color/colorAccent"
+                    android:textOff="@string/non_equilibrated"
+                    android:textOn="@string/equilibrado"
+                    android:textSize="24sp" />
+
+                <RadioGroup
+                    android:id="@+id/playersLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/toggleButton"
+                    android:layout_alignEnd="@id/battleplan_generator_button"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
                     android:baselineAligned="true"
                     android:drawingCacheQuality="auto"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     tools:visibility="visible">
 
-                    <RelativeLayout
+                    <RadioButton
+                        android:id="@+id/radioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:baselineAligned="true"
-                        android:drawingCacheQuality="auto"
-                        android:orientation="horizontal"
-                        tools:visibility="visible">
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/_2jugadores"
+                        android:textSize="25sp" />
 
-                        <RadioButton
-                            android:id="@+id/radioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/_2jugadores"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="30sp" />
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/_2_jugadores"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25sp" />
 
-                        <RadioButton
-                            android:id="@+id/radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/radioButton"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/_2_jugadores"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="30sp" />
+                </RadioGroup>
 
-                    </RelativeLayout>
-
-                    <ImageButton
-                        android:id="@+id/battleplan_generator_button"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="10dp"
-                        android:contentDescription="@string/battleplan_gen"
-                        android:textAlignment="center"
-                        app:srcCompat="@drawable/battleplan_generator" />
-                </RelativeLayout>
-
-
-            </RadioGroup>
+                <ImageView
+                    android:id="@+id/battleplan_generator_button"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="20dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/battleplan_gen"
+                    android:focusable="true"
+                    android:foreground="@drawable/rounded_fg"
+                    android:textAlignment="center"
+                    app:srcCompat="@drawable/battleplan_generator" />
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 

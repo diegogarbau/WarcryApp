@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">WARCRY</string>
     <string name="maps_button">Maps Button</string>
     <string name="quest_button">Quest Button</string>
     <string name="bands_button">Bands Button</string>
@@ -10,7 +10,7 @@
     <string name="titulo" />
     <string name="descripcion" />
     <string name="_2_jugadores">+2 Jugadores</string>
-    <string name="_2jugadores"> 2 Jugadores</string>
+    <string name="_2jugadores">  2 Jugadores</string>
     <string name="battleplan_gen">generate a battleplan</string>
     <string name="show_band">Show Band</string>
     <string name="battleplan_generator">Battleplan Generator</string>
@@ -64,4 +64,7 @@
     <string name="quest_description" />
     <string name="card_tittle">TITULO HARDCODEADO</string>
     <string name="equilibrated">Describe if the Quest is equilibrated or not</string>
+    <string name="EqulibratedButton">ToggleButton</string>
+    <string name="non_equilibrated">NO EQUILIBRADO</string>
+    <string name="equilibrado">EQUILIBRADO</string>
 </resources>

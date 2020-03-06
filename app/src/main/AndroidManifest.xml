@@ -14,7 +14,7 @@
         <activity android:name=".activities.bandsActivity" />
         <activity android:name=".activities.deploymentActivity" />
         <activity android:name=".activities.questsActivity" />
-        <activity android:name=".activities.mapsActivity" />
+        <activity android:name=".activities.MapsActivity" />
         <activity android:name=".activities.mainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

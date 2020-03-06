@@ -3,8 +3,6 @@ package com.example.myapplication.services;
 import com.example.myapplication.entities.Card;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -13,19 +11,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public interface WarcryParserService  {
+public interface WarcryParserService {
     String COMMA_DELIMITER = ",";
 
 
-    default List<Card> getData(String inputPath) {
-        List<Card> inputList = new ArrayList<>();
+    default List<?> getData(InputStream inputFile) {
+        List<?> inputList = new ArrayList<>();
         try {
-            File inputF = new File(inputPath);
-            InputStream inputFS = new FileInputStream(inputF);
-            BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputFile));
             inputList = br.lines()
                     .skip(1)
-                    .map((String line) -> mapToItem(line,COMMA_DELIMITER))
+                    .map((String line) -> mapToItem(line, COMMA_DELIMITER))
+                    .map(card -> cast(card))
                     .collect(Collectors.toList());
             br.close();
         } catch (IOException e) {
@@ -34,4 +31,9 @@ public interface WarcryParserService  {
     }
 
     Card mapToItem(String line, String delimiter);
+
+    List<?> parseDeck(List<Card> deck);
+
+    Card cast(Card card);
+
 }

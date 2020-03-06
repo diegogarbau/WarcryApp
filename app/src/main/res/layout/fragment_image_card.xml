@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.imageCardFragment">
+    tools:context=".fragments.ImageCardFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/kroftsman"
                 android:paddingStart="5dp"
@@ -32,38 +32,42 @@
                 android:textAlignment="center"
                 android:textColor="@color/design_default_color_on_secondary"
                 android:textSize="40sp"
-                tools:visibility="invisible" />
+                android:visibility="invisible"/>
 
 
             <ImageView
-                android:id="@+id/imageCardEquilibrated"
+                android:id="@+id/CardViewEquilibrated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="10dp"
                 android:contentDescription="@string/equilibrated"
                 android:orientation="vertical"
+
+                android:scaleType="centerInside"
+                android:scaleX="0.75"
+                android:scaleY="0.75"
                 android:src="@drawable/equilibrated"
+                android:verticalScrollbarPosition="defaultPosition"
                 tools:visibility="visible" />
 
             <RelativeLayout
                 android:id="@+id/ImageLayout"
                 android:layout_width="300dp"
-                android:layout_height="500dp"
+                android:layout_height="400dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="175dp"
+                android:layout_marginTop="140dp"
                 tools:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/imageCardView"
+                    android:id="@+id/CardViewImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="false"
                     android:contentDescription="@string/todo"
                     android:cropToPadding="false"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/map1"
                     android:visibility="visible" />
             </RelativeLayout>
 

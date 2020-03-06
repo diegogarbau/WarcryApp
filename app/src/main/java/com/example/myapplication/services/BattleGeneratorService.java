@@ -12,29 +12,16 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class BattleGeneratorService {
-    private final String MAPS_FILE_PATH = System.getenv("map_file_path");
-    private final String DEPLOYMENT_FILE_PATH = "DEPLOYMENT_FILE_PATH";
-    private final String QUEST_FILE_PATH = "QUEST_FILE_VALUE";
-    private final String TWIST_FILE_PATH = "TWIST_FILE_PATH";
+public class BattleGeneratorService<MAPS_FILE_PATH> {
 
-    private WarcryParserService mapsService = new MapService();
-    private WarcryParserService deploymentService = new DeploymentService();
-    private WarcryParserService questService = new QuestService();
-    private WarcryParserService twistService = new TwistService();
 
-    private List<Card> mapsList = mapsService.getData(MAPS_FILE_PATH);
-    private List<Card> deploymentList = deploymentService.getData(DEPLOYMENT_FILE_PATH);
-    private List<Card> questList = questService.getData(QUEST_FILE_PATH);
-    private List<Card> twistList = twistService.getData(TWIST_FILE_PATH);
+    public BattlePlan generateBattlePlan(Boolean equilibrated, int players, List[] decks) {
 
-    public BattlePlan generateBattlePlan(Boolean equilibrated, int players) {
-
-        List<Card> mapsDeck = filterMaps(mapsList, equilibrated);
-        List<Card> deploymentDeck = filterDeploysAndQuest(deploymentList, equilibrated, players);
-        List<Card> questDeck = filterDeploysAndQuest(questList, equilibrated, players);
-        List<Card> twistDeck = twistList;
-        Card emptyCard =  new Deployment.Builder().setTitle("Carta No Encontrada").build();
+        List mapsDeck = filterMaps(decks[0], equilibrated);
+        List deploymentDeck = filterDeploysAndQuest(decks[1], equilibrated, players);
+        List questDeck = filterDeploysAndQuest(decks[2], equilibrated, players);
+        List twistDeck = decks[3];
+        Card emptyCard = new Deployment().setTitle("Carta No Encontrada");
         return new BattlePlan()
                 .setMap((Maps) pickOne(mapsDeck.stream(), mapsDeck.size()).orElse(emptyCard))
                 .setDeployment((Deployment) pickOne(deploymentDeck.stream(), deploymentDeck.size()).orElse(emptyCard))

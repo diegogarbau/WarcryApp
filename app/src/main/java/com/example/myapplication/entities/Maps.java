@@ -1,16 +1,59 @@
 package com.example.myapplication.entities;
 
-public class Maps extends ImgCard {
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
+
+public class Maps extends ImgCard implements Parcelable {
     private final Boolean multiplayer = Boolean.FALSE;
+    private int id;
+
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    protected Maps(Parcel in) {
+        id = in.readInt();
+        img = in.readString();
+        equilibrated = in.readBoolean();
+    }
+
+    public Maps() {
+    }
+
+    public static final Creator<Maps> CREATOR = new Creator<Maps>() {
+        @RequiresApi(api = Build.VERSION_CODES.Q)
+        @Override
+        public Maps createFromParcel(Parcel in) {
+            return new Maps(in);
+        }
+
+        @Override
+        public Maps[] newArray(int size) {
+            return new Maps[size];
+        }
+    };
 
     @Override
-    public String getImg() {
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte((byte) (multiplayer == null ? 0 : multiplayer ? 1 : 2));
+        dest.writeInt(id);
+    }
+
+    @Override
+   public String getImg() {
         return img;
     }
 
     @Override
-    void setImg(String img) {
+    public Maps setImg(String img) {
         this.img = img;
+        return this;
     }
 
     @Override
@@ -19,17 +62,20 @@ public class Maps extends ImgCard {
     }
 
     @Override
-    protected void setId(int id) {
+    public Maps setId(int id) {
         this.id = id;
+        return this;
     }
 
     @Override
-    protected String getTitle() {
-        return null;
+    public String getTitle() {
+        return title;
     }
 
     @Override
-    protected void setTitle(String title) {
+    protected Maps setTitle(String title) {
+        this.title = title;
+        return this;
     }
 
     @Override
@@ -43,37 +89,8 @@ public class Maps extends ImgCard {
     }
 
     @Override
-    protected void setEquilibrated(Boolean equilibrated) {
+    public Maps setEquilibrated(Boolean equilibrated) {
         this.equilibrated = equilibrated;
-    }
-
-    public static class Builder {
-        private int id;
-        private String img;
-        private Boolean equilibrated;
-
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setImg(String img) {
-            this.img = img;
-            return this;
-        }
-
-        public Builder setEquilibrated(Boolean equilibrated) {
-            this.equilibrated = equilibrated;
-            return this;
-        }
-
-        public Maps build() {
-            Maps maps = new Maps();
-            maps.setId(id);
-            maps.setImg(img);
-            maps.setEquilibrated(equilibrated);
-            return maps;
-        }
+        return this;
     }
 }

@@ -5,32 +5,36 @@ public class Deployment extends ImgCard {
     private final Boolean multiplayer = Boolean.FALSE;
 
     @Override
-    public String getImg() {
-        return img;
-    }
-
-    @Override
-    void setImg(String img) {
-        this.img = img;
-    }
-
-    @Override
     public int getId() {
         return id;
     }
 
     @Override
-    protected void setId(int id) {
+    public Deployment setId(int id) {
         this.id = id;
+        return this;
     }
+    @Override
+    public String getImg() {
+        return img;
+    }
+
+    @Override
+    public Deployment setImg(String img) {
+        this.img = img;
+        return this;
+    }
+
 
     @Override
     public String getTitle() {
-        return null;
+        return title;
     }
 
     @Override
-    protected void setTitle(String title) {
+    public Deployment setTitle(String title) {
+        this.title = title;
+        return this;
     }
 
     @Override
@@ -44,44 +48,9 @@ public class Deployment extends ImgCard {
     }
 
     @Override
-    protected void setEquilibrated(Boolean equilibrated) {
+    public Deployment setEquilibrated(Boolean equilibrated) {
         this.equilibrated = equilibrated;
+        return this;
     }
 
-    public static class Builder {
-        private int id;
-        private String title;
-        private String img;
-        private Boolean equilibrated;
-
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public Builder setImg(String img) {
-            this.img = img;
-            return this;
-        }
-
-        public Builder setEquilibrated(Boolean equilibrated) {
-            this.equilibrated = equilibrated;
-            return this;
-        }
-
-        public Deployment build() {
-            Deployment deployment = new Deployment();
-            deployment.setId(id);
-            deployment.setTitle(title);
-            deployment.setImg(img);
-            deployment.setEquilibrated(equilibrated);
-            return deployment;
-        }
-    }
 }
